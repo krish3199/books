@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Book Cards</title>
+
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f0f0f;
+            padding: 40px 20px;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .card {
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #292929;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 255, 157, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #00ff9d;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #bbb;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .card button {
+            background: linear-gradient(to right, #00ff9d, #00bfff);
+            color: black;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s ease;
+            font-size: 14px;
+        }
+
+        .card button:hover {
+            opacity: 0.85;
+            transform: scale(1.05);
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="main" id="main"></div>
+    <!-- Footer Section -->
+<footer style="margin-top: 60px; text-align: center; color: #aaa;">
+    <hr style="border-color: #444; margin-bottom: 20px;" />
+    <p style="font-size: 18px; color: #00ff9d; font-weight: bold;">Made with ❤️ by <span style="color: #00bfff;">itz_karishh_99</span></p>
+    <p style="font-size: 14px; color: #bbb; margin-top: 10px;">
+        💡 Did you know?
+        <br />
+        • Books can reduce stress by 68% – even more than music or tea! 📚✨<br />
+        • Reading 6 minutes a day improves brain function. 🧠⚡<br />
+        • 1 book can change your whole mindset... just like that. 🚀📖
+    </p>
+    <p style="margin-top: 20px; font-size: 12px; color: #555;">© 2025 | Designed with passion by Krish</p>
+</footer>
+
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        let main = document.getElementById("main");
+
+        let cardsDetails = [
+            {
+                img: "https://i.pinimg.com/736x/87/e7/48/87e748382530807417a76926b7c09ff3.jpg",
+                title: "The Catcher in the Rye – J.D. Salinger",
+                list: "Zindagi ek safar hai jo har din naye rangon se bhara hota hai. Kabhi muskurahat laata hai, to kabhi imtihaan.",
+                button: "Buy now"
+            },
+            {
+                img: "https://i.pinimg.com/736x/d3/04/7d/d3047d5c861acaea73ad269a90c96fca.jpg",
+                title: "The Midnight Library – Matt Haig",
+                list: "Apne sapno par bharosa rakho, kyunki wahi tumhe ek nayi duniya tak le jaate hain – ek aisi duniya, jahan sab kuch mumkin hai.",
+                button: "Buy now"
+            },
+            {
+                img: "https://i.pinimg.com/736x/6d/a7/fc/6da7fc8e36e99b24a7a33d2a574aa93c.jpg",
+                title: "Ikigai – Hector Garcia",
+                list: "Jeevan ka asli maqsad sukoon aur passion ke beech ka santulan dhoondhna hota hai.",
+                button: "Buy now"
+            },
+            {
+                img: "https://i.pinimg.com/736x/1b/dd/97/1bdd972651de182cdc1a8d3637323740.jpg",
+                title: "The Alchemist – Paulo Coelho",
+                list: "Jab tum kisi cheez ko dil se chahte ho, to poori kainaat usse tumse milane ki koshish karti hai.",
+                button: "Buy now"
+            },
+            {
+                img: "https://i.pinimg.com/736x/55/8f/d3/558fd3a6ad8c809ad0b311c8d9a017d3.jpg",
+                title: "Atomic Habits – James Clear",
+                list: "Chhoti aadatein bade parivartan laati hain. Rozana sudhar ka ek percent bhi kaafi hai.",
+                button: "Buy now"
+            },
+            {
+                img: "https://i.pinimg.com/736x/67/a6/dd/67a6dd7b40d88cd5c583828f36e81a40.jpg",
+                title: "Deep Work – Cal Newport",
+                list: "Gehrai se kaam karna safalta ki kunji hai. Distractions ko chhodo aur focus karo.",
+                button: "Buy now"
+            },
+            {
+                img: "https://i.pinimg.com/736x/f1/47/3f/f1473fdbb95a5d264fd6994e9f033950.jpg",
+                title: "Man’s Search for Meaning – Viktor E. Frankl",
+                list: "Zindagi ka asli matlab hum us dard se samajhte hain jo hum jhelte hain.",
+                button: "Buy now"
+            },
+            {
+                img: "https://i.pinimg.com/736x/31/6e/cb/316ecb32e6969ff4bd48087a072fedf5.jpg",
+                title: "The Power of Now – Eckhart Tolle",
+                list: "Jo pal abhi hai, wahi sach hai. Beete hue ya aane wale samay mein jeena sirf dard laata hai.",
+                button: "Buy now"
+            },
+            {
+                img: "https://i.pinimg.com/736x/53/4c/02/534c022358e6d5e313cb28d6917df566.jpg",
+                title: "Think Like a Monk – Jay Shetty",
+                list: "Shaanti andar se aati hai, jab hum apne vichaaron par control paate hain.",
+                button: "Buy now"
+            },
+            {
+                img: "https://i.pinimg.com/736x/f1/96/03/f19603338aabfea3ebfa3c2206994bcd.jpg",
+                title: "Can’t Hurt Me – David Goggins",
+                list: "Apni limits tod do. Dard se mat daro, usse apna fuel banao.",
+                button: "Buy now"
+            },
+             {
+                img: "https://i.pinimg.com/736x/a8/c3/c3/a8c3c3cfbe6c88258511b01d4195c328.jpg",
+                title: "Deep Work – Cal Newport",
+                list: "Gehrai se kaam karna safalta ki kunji hai. Distractions ko chhodo aur focus karo.",
+                button: "Buy now"
+            },
+            {
+                img: "https://i.pinimg.com/736x/eb/4f/49/eb4f4930d7fc37985584acb129d3744b.jpg",
+                title: "Man’s Search for Meaning – Viktor E. Frankl",
+                list: "Zindagi ka asli matlab hum us dard se samajhte hain jo hum jhelte hain.",
+                button: "Buy now"
+            }
+        ];
+
+        let animations = ["fade-up", "zoom-in", "flip-left", "fade-right", "fade-down", "flip-up", "fade-left", "zoom-out", "flip-right"];
+
+        for (let i = 0; i < cardsDetails.length; i++) {
+            let card = document.createElement("div");
+            card.classList.add("card");
+            card.setAttribute("data-aos", animations[i % animations.length]);
+            card.innerHTML = `
+                <img src="${cardsDetails[i].img}" alt="Book Image" />
+                <div class="card-content">
+                    <h3>${cardsDetails[i].title}</h3>
+                    <p>${cardsDetails[i].list}</p>
+                    <button>${cardsDetails[i].button}</button>
+                </div>
+            `;
+            main.appendChild(card);
+        }
+    </script>
+
+</body>
+
+</html>
